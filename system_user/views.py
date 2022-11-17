@@ -48,7 +48,7 @@ class AuthUserLoginView(APIView):
         user = authenticate(username=username, password=password)
 
         if user is None:
-            return Response({"error": "Invalid login credentials"}, status=status.HTTP_200_OK)
+            return Response({"error": "Invalid login credentials"}, status=status.HTTP_404_NOT_FOUND)
 
         else:
 
